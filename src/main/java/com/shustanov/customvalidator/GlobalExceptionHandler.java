@@ -15,7 +15,6 @@ import org.springframework.web.method.annotation.HandlerMethodValidationExceptio
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestControllerAdvice
@@ -67,11 +66,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         private Map<?, ?> details;
 
-        private List<String> argumentsList;
-
         @Builder
-        public ErrorDetails(String message, Map<String, String> details, List<String> argumentsList) {
-            this.argumentsList = argumentsList;
+        public ErrorDetails(String message, Map<String, String> details) {
             this.message = message;
             this.details = details;
         }
